@@ -2,7 +2,7 @@ var calc = document.getElementById("calcInput");
 var num = document.querySelectorAll(".num");
 var operation = document.querySelectorAll(".operation");
 var reset = document.getElementById("reset");
-var numCurrent = 0;
+var numCurrent = "0";
 var isNumberNew = false;
 var operationLast;
 
@@ -29,8 +29,12 @@ function inputNums(number) {
             console.log("1)calc.value: " + calc.value);
             console.log("1)isNumberNew: " + isNumberNew);
     } else {
-        calc.value += number;
+        if (calc.value === "0") {
+            calc.value = number;
+        } else {
+            calc.value += number;
             console.log("2)calc.value: " + calc.value);
+        }
     }
 }
 
